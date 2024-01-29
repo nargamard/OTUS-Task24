@@ -1,0 +1,773 @@
+Создаём виртуальные машины vagrant
+Bringing machine 'inetRouter' up with 'virtualbox' provider...
+Bringing machine 'centralRouter' up with 'virtualbox' provider...
+Bringing machine 'office1Router' up with 'virtualbox' provider...
+Bringing machine 'testClient1' up with 'virtualbox' provider...
+Bringing machine 'testServer1' up with 'virtualbox' provider...
+Bringing machine 'testClient2' up with 'virtualbox' provider...
+Bringing machine 'testServer2' up with 'virtualbox' provider...
+==> inetRouter: Importing base box 'centos/8'...
+
+[KProgress: 20%
+[KProgress: 40%
+[KProgress: 50%
+[KProgress: 70%
+[KProgress: 90%
+[K==> inetRouter: Matching MAC address for NAT networking...
+==> inetRouter: Checking if box 'centos/8' version '1.0.0' is up to date...
+==> inetRouter: Setting the name of the VM: vagrant_inetRouter_1706558589685_14197
+==> inetRouter: Clearing any previously set network interfaces...
+==> inetRouter: Preparing network interfaces based on configuration...
+    inetRouter: Adapter 1: nat
+    inetRouter: Adapter 2: intnet
+    inetRouter: Adapter 3: intnet
+    inetRouter: Adapter 8: hostonly
+==> inetRouter: Forwarding ports...
+    inetRouter: 22 (guest) => 2222 (host) (adapter 1)
+==> inetRouter: Running 'pre-boot' VM customizations...
+==> inetRouter: Booting VM...
+==> inetRouter: Waiting for machine to boot. This may take a few minutes...
+    inetRouter: SSH address: 127.0.0.1:2222
+    inetRouter: SSH username: vagrant
+    inetRouter: SSH auth method: private key
+    inetRouter: 
+    inetRouter: Vagrant insecure key detected. Vagrant will automatically replace
+    inetRouter: this with a newly generated keypair for better security.
+    inetRouter: 
+    inetRouter: Inserting generated public key within guest...
+    inetRouter: Removing insecure key from the guest if it's present...
+    inetRouter: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> inetRouter: Machine booted and ready!
+==> inetRouter: Checking for guest additions in VM...
+    inetRouter: No guest additions were detected on the base box for this VM! Guest
+    inetRouter: additions are required for forwarded ports, shared folders, host only
+    inetRouter: networking, and more. If SSH fails on this machine, please install
+    inetRouter: the guest additions and repackage the box to continue.
+    inetRouter: 
+    inetRouter: This is not an error message; everything may continue to work properly,
+    inetRouter: in which case you may ignore this message.
+==> inetRouter: Setting hostname...
+==> inetRouter: Configuring and enabling network interfaces...
+==> inetRouter: Rsyncing folder: /mnt/STORAGE/Shared/OTUS-Task24/vagrant/ => /vagrant
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> inetRouter: Running provisioner: shell...
+    inetRouter: Running: inline script
+==> centralRouter: Importing base box 'centos/8'...
+
+[KProgress: 20%
+[KProgress: 40%
+[KProgress: 50%
+[KProgress: 70%
+[KProgress: 90%
+[K==> centralRouter: Matching MAC address for NAT networking...
+==> centralRouter: Checking if box 'centos/8' version '1.0.0' is up to date...
+==> centralRouter: Setting the name of the VM: vagrant_centralRouter_1706558662885_63449
+==> centralRouter: Fixed port collision for 22 => 2222. Now on port 2200.
+==> centralRouter: Clearing any previously set network interfaces...
+==> centralRouter: Preparing network interfaces based on configuration...
+    centralRouter: Adapter 1: nat
+    centralRouter: Adapter 2: intnet
+    centralRouter: Adapter 3: intnet
+    centralRouter: Adapter 6: intnet
+    centralRouter: Adapter 8: hostonly
+==> centralRouter: Forwarding ports...
+    centralRouter: 22 (guest) => 2200 (host) (adapter 1)
+==> centralRouter: Running 'pre-boot' VM customizations...
+==> centralRouter: Booting VM...
+==> centralRouter: Waiting for machine to boot. This may take a few minutes...
+    centralRouter: SSH address: 127.0.0.1:2200
+    centralRouter: SSH username: vagrant
+    centralRouter: SSH auth method: private key
+    centralRouter: 
+    centralRouter: Vagrant insecure key detected. Vagrant will automatically replace
+    centralRouter: this with a newly generated keypair for better security.
+    centralRouter: 
+    centralRouter: Inserting generated public key within guest...
+    centralRouter: Removing insecure key from the guest if it's present...
+    centralRouter: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> centralRouter: Machine booted and ready!
+==> centralRouter: Checking for guest additions in VM...
+    centralRouter: No guest additions were detected on the base box for this VM! Guest
+    centralRouter: additions are required for forwarded ports, shared folders, host only
+    centralRouter: networking, and more. If SSH fails on this machine, please install
+    centralRouter: the guest additions and repackage the box to continue.
+    centralRouter: 
+    centralRouter: This is not an error message; everything may continue to work properly,
+    centralRouter: in which case you may ignore this message.
+==> centralRouter: Setting hostname...
+==> centralRouter: Configuring and enabling network interfaces...
+==> centralRouter: Rsyncing folder: /mnt/STORAGE/Shared/OTUS-Task24/vagrant/ => /vagrant
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> centralRouter: Running provisioner: shell...
+    centralRouter: Running: inline script
+==> office1Router: Importing base box 'centos/8'...
+
+[KProgress: 20%
+[KProgress: 40%
+[KProgress: 50%
+[KProgress: 70%
+[KProgress: 90%
+[K==> office1Router: Matching MAC address for NAT networking...
+==> office1Router: Checking if box 'centos/8' version '1.0.0' is up to date...
+==> office1Router: Setting the name of the VM: vagrant_office1Router_1706558738369_98274
+==> office1Router: Fixed port collision for 22 => 2222. Now on port 2201.
+==> office1Router: Clearing any previously set network interfaces...
+==> office1Router: Preparing network interfaces based on configuration...
+    office1Router: Adapter 1: nat
+    office1Router: Adapter 2: intnet
+    office1Router: Adapter 3: intnet
+    office1Router: Adapter 4: intnet
+    office1Router: Adapter 5: intnet
+    office1Router: Adapter 6: intnet
+    office1Router: Adapter 8: hostonly
+==> office1Router: Forwarding ports...
+    office1Router: 22 (guest) => 2201 (host) (adapter 1)
+==> office1Router: Running 'pre-boot' VM customizations...
+==> office1Router: Booting VM...
+==> office1Router: Waiting for machine to boot. This may take a few minutes...
+    office1Router: SSH address: 127.0.0.1:2201
+    office1Router: SSH username: vagrant
+    office1Router: SSH auth method: private key
+    office1Router: 
+    office1Router: Vagrant insecure key detected. Vagrant will automatically replace
+    office1Router: this with a newly generated keypair for better security.
+    office1Router: 
+    office1Router: Inserting generated public key within guest...
+    office1Router: Removing insecure key from the guest if it's present...
+    office1Router: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> office1Router: Machine booted and ready!
+==> office1Router: Checking for guest additions in VM...
+    office1Router: No guest additions were detected on the base box for this VM! Guest
+    office1Router: additions are required for forwarded ports, shared folders, host only
+    office1Router: networking, and more. If SSH fails on this machine, please install
+    office1Router: the guest additions and repackage the box to continue.
+    office1Router: 
+    office1Router: This is not an error message; everything may continue to work properly,
+    office1Router: in which case you may ignore this message.
+==> office1Router: Setting hostname...
+==> office1Router: Configuring and enabling network interfaces...
+==> office1Router: Rsyncing folder: /mnt/STORAGE/Shared/OTUS-Task24/vagrant/ => /vagrant
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> office1Router: Running provisioner: shell...
+    office1Router: Running: inline script
+==> testClient1: Importing base box 'centos/8'...
+
+[KProgress: 20%
+[KProgress: 40%
+[KProgress: 50%
+[KProgress: 70%
+[KProgress: 90%
+[K==> testClient1: Matching MAC address for NAT networking...
+==> testClient1: Checking if box 'centos/8' version '1.0.0' is up to date...
+==> testClient1: Setting the name of the VM: vagrant_testClient1_1706558813762_45684
+==> testClient1: Fixed port collision for 22 => 2222. Now on port 2202.
+==> testClient1: Clearing any previously set network interfaces...
+==> testClient1: Preparing network interfaces based on configuration...
+    testClient1: Adapter 1: nat
+    testClient1: Adapter 2: intnet
+    testClient1: Adapter 8: hostonly
+==> testClient1: Forwarding ports...
+    testClient1: 22 (guest) => 2202 (host) (adapter 1)
+==> testClient1: Running 'pre-boot' VM customizations...
+==> testClient1: Booting VM...
+==> testClient1: Waiting for machine to boot. This may take a few minutes...
+    testClient1: SSH address: 127.0.0.1:2202
+    testClient1: SSH username: vagrant
+    testClient1: SSH auth method: private key
+    testClient1: 
+    testClient1: Vagrant insecure key detected. Vagrant will automatically replace
+    testClient1: this with a newly generated keypair for better security.
+    testClient1: 
+    testClient1: Inserting generated public key within guest...
+    testClient1: Removing insecure key from the guest if it's present...
+    testClient1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> testClient1: Machine booted and ready!
+==> testClient1: Checking for guest additions in VM...
+    testClient1: No guest additions were detected on the base box for this VM! Guest
+    testClient1: additions are required for forwarded ports, shared folders, host only
+    testClient1: networking, and more. If SSH fails on this machine, please install
+    testClient1: the guest additions and repackage the box to continue.
+    testClient1: 
+    testClient1: This is not an error message; everything may continue to work properly,
+    testClient1: in which case you may ignore this message.
+==> testClient1: Setting hostname...
+==> testClient1: Configuring and enabling network interfaces...
+==> testClient1: Rsyncing folder: /mnt/STORAGE/Shared/OTUS-Task24/vagrant/ => /vagrant
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testClient1: Running provisioner: shell...
+    testClient1: Running: inline script
+==> testServer1: Importing base box 'centos/8'...
+
+[KProgress: 20%
+[KProgress: 40%
+[KProgress: 50%
+[KProgress: 70%
+[KProgress: 90%
+[K==> testServer1: Matching MAC address for NAT networking...
+==> testServer1: Checking if box 'centos/8' version '1.0.0' is up to date...
+==> testServer1: Setting the name of the VM: vagrant_testServer1_1706558882639_4354
+==> testServer1: Fixed port collision for 22 => 2222. Now on port 2203.
+==> testServer1: Clearing any previously set network interfaces...
+==> testServer1: Preparing network interfaces based on configuration...
+    testServer1: Adapter 1: nat
+    testServer1: Adapter 2: intnet
+    testServer1: Adapter 8: hostonly
+==> testServer1: Forwarding ports...
+    testServer1: 22 (guest) => 2203 (host) (adapter 1)
+==> testServer1: Running 'pre-boot' VM customizations...
+==> testServer1: Booting VM...
+==> testServer1: Waiting for machine to boot. This may take a few minutes...
+    testServer1: SSH address: 127.0.0.1:2203
+    testServer1: SSH username: vagrant
+    testServer1: SSH auth method: private key
+    testServer1: 
+    testServer1: Vagrant insecure key detected. Vagrant will automatically replace
+    testServer1: this with a newly generated keypair for better security.
+    testServer1: 
+    testServer1: Inserting generated public key within guest...
+    testServer1: Removing insecure key from the guest if it's present...
+    testServer1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> testServer1: Machine booted and ready!
+==> testServer1: Checking for guest additions in VM...
+    testServer1: No guest additions were detected on the base box for this VM! Guest
+    testServer1: additions are required for forwarded ports, shared folders, host only
+    testServer1: networking, and more. If SSH fails on this machine, please install
+    testServer1: the guest additions and repackage the box to continue.
+    testServer1: 
+    testServer1: This is not an error message; everything may continue to work properly,
+    testServer1: in which case you may ignore this message.
+==> testServer1: Setting hostname...
+==> testServer1: Configuring and enabling network interfaces...
+==> testServer1: Rsyncing folder: /mnt/STORAGE/Shared/OTUS-Task24/vagrant/ => /vagrant
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testServer1: Running provisioner: shell...
+    testServer1: Running: inline script
+==> testClient2: Importing base box 'ubuntu/focal64'...
+
+[KProgress: 10%
+[KProgress: 90%
+[K==> testClient2: Matching MAC address for NAT networking...
+==> testClient2: Checking if box 'ubuntu/focal64' version '1.0.0' is up to date...
+==> testClient2: Setting the name of the VM: vagrant_testClient2_1706558948931_55576
+==> testClient2: Fixed port collision for 22 => 2222. Now on port 2204.
+==> testClient2: Clearing any previously set network interfaces...
+==> testClient2: Preparing network interfaces based on configuration...
+    testClient2: Adapter 1: nat
+    testClient2: Adapter 2: intnet
+    testClient2: Adapter 8: hostonly
+==> testClient2: Forwarding ports...
+    testClient2: 22 (guest) => 2204 (host) (adapter 1)
+==> testClient2: Running 'pre-boot' VM customizations...
+==> testClient2: Booting VM...
+==> testClient2: Waiting for machine to boot. This may take a few minutes...
+    testClient2: SSH address: 127.0.0.1:2204
+    testClient2: SSH username: vagrant
+    testClient2: SSH auth method: private key
+    testClient2: Warning: Connection reset. Retrying...
+    testClient2: Warning: Remote connection disconnect. Retrying...
+    testClient2: Warning: Connection reset. Retrying...
+    testClient2: Warning: Remote connection disconnect. Retrying...
+    testClient2: 
+    testClient2: Vagrant insecure key detected. Vagrant will automatically replace
+    testClient2: this with a newly generated keypair for better security.
+    testClient2: 
+    testClient2: Inserting generated public key within guest...
+    testClient2: Removing insecure key from the guest if it's present...
+    testClient2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> testClient2: Machine booted and ready!
+==> testClient2: Checking for guest additions in VM...
+==> testClient2: Setting hostname...
+==> testClient2: Configuring and enabling network interfaces...
+==> testClient2: Mounting shared folders...
+    testClient2: /vagrant => /mnt/STORAGE/Shared/OTUS-Task24/vagrant
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testClient2: Running provisioner: shell...
+    testClient2: Running: inline script
+==> testServer2: Importing base box 'ubuntu/focal64'...
+
+[KProgress: 90%
+[K==> testServer2: Matching MAC address for NAT networking...
+==> testServer2: Checking if box 'ubuntu/focal64' version '1.0.0' is up to date...
+==> testServer2: Setting the name of the VM: vagrant_testServer2_1706559039813_88889
+==> testServer2: Fixed port collision for 22 => 2222. Now on port 2205.
+==> testServer2: Clearing any previously set network interfaces...
+==> testServer2: Preparing network interfaces based on configuration...
+    testServer2: Adapter 1: nat
+    testServer2: Adapter 2: intnet
+    testServer2: Adapter 8: hostonly
+==> testServer2: Forwarding ports...
+    testServer2: 22 (guest) => 2205 (host) (adapter 1)
+==> testServer2: Running 'pre-boot' VM customizations...
+==> testServer2: Booting VM...
+==> testServer2: Waiting for machine to boot. This may take a few minutes...
+    testServer2: SSH address: 127.0.0.1:2205
+    testServer2: SSH username: vagrant
+    testServer2: SSH auth method: private key
+    testServer2: Warning: Connection reset. Retrying...
+    testServer2: Warning: Remote connection disconnect. Retrying...
+    testServer2: 
+    testServer2: Vagrant insecure key detected. Vagrant will automatically replace
+    testServer2: this with a newly generated keypair for better security.
+    testServer2: 
+    testServer2: Inserting generated public key within guest...
+    testServer2: Removing insecure key from the guest if it's present...
+    testServer2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> testServer2: Machine booted and ready!
+==> testServer2: Checking for guest additions in VM...
+==> testServer2: Setting hostname...
+==> testServer2: Configuring and enabling network interfaces...
+==> testServer2: Mounting shared folders...
+    testServer2: /vagrant => /mnt/STORAGE/Shared/OTUS-Task24/vagrant
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+==> testServer2: Running provisioner: shell...
+    testServer2: Running: inline script
+Подождём пару минут...
+Сделаем снапшоты со всех vagrant-машин
+Подождём ещё минуту...
+==> inetRouter: Snapshotting the machine as '1'...
+==> inetRouter: Snapshot saved! You can restore the snapshot at any time by
+==> inetRouter: using `vagrant snapshot restore`. You can delete it using
+==> inetRouter: `vagrant snapshot delete`.
+==> centralRouter: Snapshotting the machine as '2'...
+==> centralRouter: Snapshot saved! You can restore the snapshot at any time by
+==> centralRouter: using `vagrant snapshot restore`. You can delete it using
+==> centralRouter: `vagrant snapshot delete`.
+==> office1Router: Snapshotting the machine as '3'...
+==> office1Router: Snapshot saved! You can restore the snapshot at any time by
+==> office1Router: using `vagrant snapshot restore`. You can delete it using
+==> office1Router: `vagrant snapshot delete`.
+==> testClient1: Snapshotting the machine as '4'...
+==> testClient1: Snapshot saved! You can restore the snapshot at any time by
+==> testClient1: using `vagrant snapshot restore`. You can delete it using
+==> testClient1: `vagrant snapshot delete`.
+==> testClient2: Snapshotting the machine as '5'...
+==> testClient2: Snapshot saved! You can restore the snapshot at any time by
+==> testClient2: using `vagrant snapshot restore`. You can delete it using
+==> testClient2: `vagrant snapshot delete`.
+==> testServer1: Snapshotting the machine as '6'...
+==> testServer1: Snapshot saved! You can restore the snapshot at any time by
+==> testServer1: using `vagrant snapshot restore`. You can delete it using
+==> testServer1: `vagrant snapshot delete`.
+==> testServer2: Snapshotting the machine as '7'...
+==> testServer2: Snapshot saved! You can restore the snapshot at any time by
+==> testServer2: using `vagrant snapshot restore`. You can delete it using
+==> testServer2: `vagrant snapshot delete`.
+Настраиваем сервер и клиент NFS
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [inetRouter]
+ok: [testClient1]
+ok: [centralRouter]
+ok: [office1Router]
+ok: [testClient2]
+ok: [testServer1]
+ok: [testServer2]
+
+TASK [deploy_network : fix repos] **********************************************
+skipping: [testClient2]
+changed: [testClient1]
+skipping: [testServer2]
+changed: [testServer1]
+changed: [centralRouter]
+changed: [office1Router]
+changed: [inetRouter]
+
+TASK [deploy_network : install softs on CentOS] ********************************
+skipping: [testClient2]
+changed: [centralRouter]
+skipping: [testServer2]
+changed: [testClient1]
+changed: [office1Router]
+changed: [testServer1]
+changed: [inetRouter]
+
+TASK [deploy_network : install softs on Debian-based] **************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testServer1]
+changed: [testServer2]
+changed: [testClient2]
+
+TASK [deploy_network : copy conf-file to client1] ******************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [testClient1]
+
+TASK [deploy_network : copy conf-file to server1] ******************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer2]
+changed: [testServer1]
+
+TASK [deploy_network : Restart service network] ********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient2]
+skipping: [testServer2]
+changed: [testServer1]
+changed: [testClient1]
+
+TASK [deploy_network : Add logs ip on client1] *********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [testClient1]
+
+TASK [deploy_network : Add logs ping client1] **********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [testClient1]
+
+TASK [deploy_network : Add logs ip on server1] *********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer2]
+changed: [testServer1]
+
+TASK [deploy_network : fetch logfile] ******************************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [testClient1]
+
+TASK [deploy_network : fetch logfile] ******************************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer2]
+changed: [testServer1]
+
+TASK [deploy_network : copy conf-file to client2] ******************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [testClient2]
+
+TASK [deploy_network : copy conf-file to server2] ******************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+changed: [testServer2]
+
+TASK [deploy_network : Restart service network] ********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testServer1]
+changed: [testClient2]
+changed: [testServer2]
+
+TASK [deploy_network : Add logs ip on client2] *********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [testClient2]
+
+TASK [deploy_network : Add logs ping client2] **********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [testClient2]
+
+TASK [deploy_network : Add logs ip on server2] *********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+changed: [testServer2]
+
+TASK [deploy_network : fetch logfile] ******************************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [testClient2]
+
+TASK [deploy_network : fetch logfile] ******************************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+changed: [testServer2]
+
+TASK [deploy_network : set up vlan1] *******************************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient2]
+skipping: [testServer2]
+changed: [testClient1]
+changed: [testServer1]
+
+TASK [deploy_network : Restart service network] ********************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient2]
+skipping: [testServer2]
+changed: [testClient1]
+changed: [testServer1]
+
+TASK [deploy_network : set up vlan2] *******************************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testServer1]
+changed: [testClient2]
+changed: [testServer2]
+
+TASK [deploy_network : apply set up vlan2] *************************************
+skipping: [inetRouter]
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testServer1]
+changed: [testClient2]
+changed: [testServer2]
+
+TASK [deploy_network : set up ifcfg-bond0] *************************************
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [inetRouter]
+changed: [centralRouter]
+
+TASK [deploy_network : set up eth1,eth2] ***************************************
+skipping: [office1Router] => (item=ifcfg-eth1) 
+skipping: [office1Router] => (item=ifcfg-eth2) 
+skipping: [testClient1] => (item=ifcfg-eth1) 
+skipping: [testClient1] => (item=ifcfg-eth2) 
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2] => (item=ifcfg-eth1) 
+skipping: [testClient2] => (item=ifcfg-eth2) 
+skipping: [testServer1] => (item=ifcfg-eth1) 
+skipping: [testServer1] => (item=ifcfg-eth2) 
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2] => (item=ifcfg-eth1) 
+skipping: [testServer2] => (item=ifcfg-eth2) 
+skipping: [testServer2]
+changed: [inetRouter] => (item=ifcfg-eth1)
+changed: [centralRouter] => (item=ifcfg-eth1)
+changed: [inetRouter] => (item=ifcfg-eth2)
+changed: [centralRouter] => (item=ifcfg-eth2)
+
+TASK [deploy_network : restart hosts for bond0] ********************************
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [centralRouter]
+changed: [inetRouter]
+
+TASK [deploy_network : Add logs ping inetRouter] *******************************
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [inetRouter]
+
+TASK [deploy_network : Down eth1 on centralRouter] *****************************
+skipping: [inetRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [centralRouter]
+
+TASK [deploy_network : Add logs ping inetRouter] *******************************
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [inetRouter]
+
+TASK [deploy_network : Down eth1 on centralRouter] *****************************
+skipping: [inetRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [centralRouter]
+
+TASK [deploy_network : fetch logfile] ******************************************
+skipping: [centralRouter]
+skipping: [office1Router]
+skipping: [testClient1]
+skipping: [testClient2]
+skipping: [testServer1]
+skipping: [testServer2]
+changed: [inetRouter]
+
+PLAY RECAP *********************************************************************
+centralRouter              : ok=8    changed=7    unreachable=0    failed=0    skipped=24   rescued=0    ignored=0   
+inetRouter                 : ok=9    changed=8    unreachable=0    failed=0    skipped=23   rescued=0    ignored=0   
+office1Router              : ok=3    changed=2    unreachable=0    failed=0    skipped=29   rescued=0    ignored=0   
+testClient1                : ok=10   changed=9    unreachable=0    failed=0    skipped=22   rescued=0    ignored=0   
+testClient2                : ok=9    changed=8    unreachable=0    failed=0    skipped=23   rescued=0    ignored=0   
+testServer1                : ok=9    changed=8    unreachable=0    failed=0    skipped=23   rescued=0    ignored=0   
+testServer2                : ok=8    changed=7    unreachable=0    failed=0    skipped=24   rescued=0    ignored=0   
+
+Файлы с логами находятся рядом со скриптом
