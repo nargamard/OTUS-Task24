@@ -1,0 +1,213 @@
+---
+# Установим сетевые утилиты
+- name: fix repos
+  shell: cd /etc/yum.repos.d/ && sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+  when: ansible_os_family == "RedHat"
+
+- name: install softs on CentOS
+  yum:
+    name: 
+      - vim
+      - traceroute
+      - tcpdump
+      - net-tools
+    state: latest
+    update_cache: true
+  when: ansible_os_family == "RedHat"
+
+- name: install softs on Debian-based
+  apt:
+    name: 
+      - vim
+      - traceroute
+      - tcpdump
+      - net-tools
+    state: latest
+    update_cache: true
+  when: ansible_os_family == "Debian"  
+
+#НАСТРОЙКА КЛИЕНТА1 И СЕРВЕРА1
+#Скопируем файл конфигурации сети на клиент1
+- name: copy conf-file to client1
+  copy:
+    src: ifcfg-vlan1-testClient1
+    dest: /etc/sysconfig/network-scripts/ifcfg-vlan1
+  when: inventory_hostname in groups['testClient1']
+
+#Скопируем файл конфигурации сети на сервер1
+- name: copy conf-file to server1
+  copy:
+    src: ifcfg-vlan2-testServer1
+    dest: /etc/sysconfig/network-scripts/ifcfg-vlan1
+  when: inventory_hostname in groups['testServer1']
+
+# Перезапустим сеть
+- name: Restart service network
+  ansible.builtin.systemd_service:
+    state: restarted
+    name: NetworkManager
+  when: inventory_hostname in groups['testClient1'] or inventory_hostname in groups['testServer1']
+
+# Запишем логи с сервера1 и клиента1
+- name: Add logs ip on client1
+  shell: echo -e "\n\n Проверим сеть на клиенте1 (ip a) \n" > /tmp/logfile_test_client1 && ip a >> /tmp/logfile_test_client1
+  when: inventory_hostname in groups['testClient1']
+
+- name: Add logs ping client1
+  shell: echo -e "\n\n Проверим сеть на клиенте1 (ping -c 4 10.10.10.1)) \n" >> /tmp/logfile_test_client1 && ping -c 4 10.10.10.1 >> /tmp/logfile_test_client1
+  when: inventory_hostname in groups['testClient1']
+
+- name: Add logs ip on server1
+  shell: echo -e "\n\n Проверим сеть на сервере1 (ip a) \n" > /tmp/logfile_test_server1 && ip a >> /tmp/logfile_test_server1
+  when: inventory_hostname in groups['testServer1']
+
+# Получим лог-файл с testClient1
+- name: fetch logfile
+  fetch:
+    src: /tmp/logfile_test_client1
+    dest: ../logfile_test_client1
+  when: inventory_hostname in groups['testClient1']
+
+# Получим лог-файл с testServer1
+- name: fetch logfile
+  fetch:
+    src: /tmp/logfile_test_server1
+    dest: ../logfile_test_server1
+  when: inventory_hostname in groups['testServer1']
+
+#НАСТРОЙКА КЛИЕНТА2 И СЕРВЕРА2
+#Скопируем файл конфигурации сети на клиент2
+- name: copy conf-file to client2
+  copy:
+    src: 50-cloud-init-testClient2
+    dest: /etc/netplan/50-cloud-init.yaml
+  when: inventory_hostname in groups['testClient2']
+
+#Скопируем файл конфигурации сети на сервер2
+- name: copy conf-file to server2
+  copy:
+    src: 50-cloud-init-testServer2
+    dest: /etc/netplan/50-cloud-init.yaml
+  when: inventory_hostname in groups['testServer2']
+
+# Перезапустим сеть
+- name: Restart service network
+  shell: netplan apply
+  when: inventory_hostname in groups['testClient2'] or inventory_hostname in groups['testServer2']
+
+# Запишем логи с сервера2 и клиента2
+- name: Add logs ip on client2
+  shell: echo -e "\n\n Проверим сеть на клиенте2 (ip a) \n" > /tmp/logfile_test_client2&& ip a >> /tmp/logfile_test_client2
+  when: inventory_hostname in groups['testClient2']
+
+- name: Add logs ping client2
+  shell: echo -e "\n\n Проверим сеть на клиенте2 (ping -c 4 10.10.10.1)) \n" >> /tmp/logfile_test_client2 && ping -c 4 10.10.10.1 >> /tmp/logfile_test_client2
+  when: inventory_hostname in groups['testClient2']
+
+- name: Add logs ip on server2
+  shell: echo -e "\n\n Проверим сеть на сервере1 (ip a) \n" > /tmp/logfile_test_server2 && ip a >> /tmp/logfile_test_server2
+  when: inventory_hostname in groups['testServer2']
+
+# Получим лог-файл с testClient2
+- name: fetch logfile
+  fetch:
+    src: /tmp/logfile_test_client2
+    dest: ../logfile_test_client2
+  when: inventory_hostname in groups['testClient2']
+
+# Получим лог-файл с testServer1
+- name: fetch logfile
+  fetch:
+    src: /tmp/logfile_test_server2
+    dest: ../logfile_test_server2
+  when: inventory_hostname in groups['testServer2']
+
+#НАСТРОЙКА VLAN ДЛЯ КЛИЕНТОВ И СЕРВЕРОВ
+# НАСТРОЙКА VLAN CENTOS
+- name: set up vlan1
+  template:
+    src: ifcfg-vlan1.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-vlan1
+    owner: root
+    group: root
+    mode: 0644
+  when: inventory_hostname in groups['testClient1'] or inventory_hostname in groups['testServer1']
+
+# Перезапустим сеть
+- name: Restart service network
+  ansible.builtin.systemd_service:
+    state: restarted
+    name: NetworkManager
+  when: inventory_hostname in groups['testClient1'] or inventory_hostname in groups['testServer1']    
+  
+# НАСТРОЙКА VLAN UBUNTU
+- name: set up vlan2
+  template:
+    src: 50-cloud-init.yaml.j2
+    dest: /etc/netplan/50-cloud-init.yaml 
+    owner: root
+    group: root
+    mode: 0644
+  when: inventory_hostname in groups['testClient2'] or inventory_hostname in groups['testServer2']    
+
+# Перезапустим сеть
+- name: apply set up vlan2
+  shell: netplan apply
+  become: true
+  when: inventory_hostname in groups['testClient2'] or inventory_hostname in groups['testServer2']    
+
+#НАСТРОЙКА BOND
+# Настройка BOND
+- name: set up ifcfg-bond0
+  template:
+    src: ifcfg-bond0.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-bond0
+    owner: root
+    group: root
+    mode: 0644
+  when: inventory_hostname in groups['inetRouter'] or inventory_hostname in groups['centralRouter']    
+
+- name: set up eth1,eth2
+  copy: 
+    src: "{{ item }}" 
+    dest: /etc/sysconfig/network-scripts/
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - ifcfg-eth1
+    - ifcfg-eth2
+  when: inventory_hostname in groups['inetRouter'] or inventory_hostname in groups['centralRouter']  
+
+  #Перезагрузка хостов 
+- name: restart hosts for bond0
+  reboot:
+    reboot_timeout: 3600
+  when: inventory_hostname in groups['inetRouter'] or inventory_hostname in groups['centralRouter']  
+
+# ТЕСТ бонда (ping)
+- name: Add logs ping inetRouter
+  shell: echo -e "\n\n Проверим сеть на клиенте2 (ping -c 4 192.168.255.2)) \n" > /tmp/logfile_test_inetRouter && ping -c 4 192.168.255.2 >> /tmp/logfile_test_inetRouter
+  when: inventory_hostname in groups['inetRouter']
+
+# Выключим интерфейс eth1 на centralRouter
+- name: Down eth1 on centralRouter
+  shell: ip link set down eth1
+  when: inventory_hostname in groups['centralRouter']
+
+# ТЕСТ бонда (ping) после выключения интерфейса eth1
+- name: Add logs ping inetRouter
+  shell: echo -e "\n\n Проверим сеть на клиенте2 ещё раз (ping -c 4 192.168.255.2)) \n" >> /tmp/logfile_test_inetRouter && ping -c 4 192.168.255.2 >> /tmp/logfile_test_inetRouter
+  when: inventory_hostname in groups['inetRouter']
+
+# Включим интерфейс eth1 на centralRouter обратно
+- name: Down eth1 on centralRouter
+  shell: ip link set up eth1
+  when: inventory_hostname in groups['centralRouter']
+
+# Получим лог-файл с inetRouter
+- name: fetch logfile
+  fetch:
+    src: /tmp/logfile_test_inetRouter
+    dest: ../logfile_test_inetRouter
+  when: inventory_hostname in groups['inetRouter']

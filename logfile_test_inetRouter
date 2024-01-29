@@ -1,0 +1,26 @@
+
+
+ Проверим сеть на клиенте2 (ping -c 4 192.168.255.2)) 
+
+PING 192.168.255.2 (192.168.255.2) 56(84) bytes of data.
+64 bytes from 192.168.255.2: icmp_seq=1 ttl=64 time=0.422 ms
+64 bytes from 192.168.255.2: icmp_seq=2 ttl=64 time=0.404 ms
+64 bytes from 192.168.255.2: icmp_seq=3 ttl=64 time=0.979 ms
+64 bytes from 192.168.255.2: icmp_seq=4 ttl=64 time=0.392 ms
+
+--- 192.168.255.2 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 701ms
+rtt min/avg/max/mdev = 0.392/0.549/0.979/0.248 ms
+
+
+ Проверим сеть на клиенте2 ещё раз (ping -c 4 192.168.255.2)) 
+
+PING 192.168.255.2 (192.168.255.2) 56(84) bytes of data.
+64 bytes from 192.168.255.2: icmp_seq=1 ttl=64 time=0.597 ms
+64 bytes from 192.168.255.2: icmp_seq=2 ttl=64 time=0.370 ms
+64 bytes from 192.168.255.2: icmp_seq=3 ttl=64 time=0.341 ms
+64 bytes from 192.168.255.2: icmp_seq=4 ttl=64 time=0.268 ms
+
+--- 192.168.255.2 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 97ms
+rtt min/avg/max/mdev = 0.268/0.394/0.597/0.122 ms
